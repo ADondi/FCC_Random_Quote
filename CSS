@@ -1,0 +1,43 @@
+body {
+  background: url(https://www.dropbox.com/s/yn155xim7mwr3nf/Wall1.jpg?raw=1)
+  no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/*Make the div float over the background img. Otherwise use body instead of html
+ to set up the background img ---> there is no need to float the elements
+ anymore!! And the text will stay centered!!!*/
+.title{
+  text-align: center;
+  padding-top: 60px;
+  font-family: Forte;
+  color: darkslategray;
+}
+
+/*Quote*/
+#quote{
+  padding-top: 150px;
+  font-family: Forte;
+  color: darkslategray;
+  text-align: center;
+}
+
+/*Next button*/
+.next {
+  padding-top: 250px;
+}
+
+/*Twitter button*/
+.twitt{
+  padding-top: 25px;
+}
+
+/*footer*/
+.footer {
+  color: darkslategray;
+  padding-top: 100px;
+  text-align: center;
+}

@@ -1,0 +1,25 @@
+/*add "https://cors-anywhere.herokuapp.com" before the ULR in ordert o bypass
+the "not-allowed-by-access-control-allow-origin-error"*/
+$(document).ready(function() {
+  $("#getQuote").on("click", function(){
+    var test = $.getJSON(
+      "https://cors-anywhere.herokuapp.com/https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json", function(json){
+      var htmlQuote = json.quoteText;
+      var htmlAuthor =json.quoteAuthor;
+      var htmlQuoteAuthor = '<h3>' + '"' + htmlQuote + '" <br>' + '<br>' + '~' +
+       htmlAuthor + '~ </h3>';
+      $(".message").html(htmlQuoteAuthor);
+
+  /*incorporate twitter button*/
+  $("#twitter").on("click", function(){
+createTwitterPage('https://twitter.com/intent/tweet?text=' +
+encodeURIComponent('"' + htmlQuote + '" -' + htmlAuthor));
+    window.open('_blank');
+    });
+      function createTwitterPage(url){
+        window.open(url, 'Share', 'width=700, height=500, toolbar=0, scrollbars=1 ,location=0 ,statusbar=0,menubar=0, resizable=1');
+        }
+      });
+    });
+
+  });
